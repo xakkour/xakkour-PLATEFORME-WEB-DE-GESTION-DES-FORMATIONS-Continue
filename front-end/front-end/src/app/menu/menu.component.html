@@ -1,0 +1,169 @@
+
+<header id="header" class="fixed-top">
+
+
+
+
+ 
+  <div class="container d-flex align-items-center">
+ <a routerLink="/home" class="logo me-auto" style=" max-height: 85; max-width: 85px;">
+  <img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+    <h1 class="logo me-auto"><a routerLink="/home">Platforme Formation Continue</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+   
+
+
+    <nav id="navbar" class="navbar order-last order-lg-0" >
+      <ul>
+       
+        <li *ngIf="securityService.admin" class="dropdown"><a><span>Parametre</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            
+						<li>
+							<a class="dropdown-item" routerLink="/etablissements" routerLinkActive="active">Etablissement</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/cycles" routerLinkActive="active">Cycle</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/domaines" routerLinkActive="active">Domaine</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/instituts" routerLinkActive="active">Institut</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/specialites" routerLinkActive="active">Specialite</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/horaires" routerLinkActive="active">Horaires</a>
+						</li>
+						<li>
+							<a class="dropdown-item" routerLink="/jours" routerLinkActive="active">Jours</a>
+						</li>
+            <li>
+							<a class="dropdown-item" routerLink="/tarifs" routerLinkActive="active">Tarifs</a>
+						</li>
+            <li><a class="dropdown-item" routerLink="/events" routerLinkActive="active">Events</a></li>
+           
+          </ul>
+        </li>
+        <li  *ngIf="securityService.admin || securityService.enseignant || securityService.expert" class="dropdown"><a><span>Formation </span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li *ngIf="securityService.admin">
+							<a class="dropdown-item" routerLink="/classes" routerLinkActive="active">Classes</a>
+						</li>
+            <li *ngIf="securityService.admin">
+							<a class="dropdown-item" routerLink="/matieres" routerLinkActive="active">Matières</a>
+						</li>
+						<li *ngIf="securityService.admin">
+							<a class="dropdown-item" routerLink="/coefficients" routerLinkActive="active">Coefficients</a>
+						</li>
+            <li *ngIf="securityService.admin || securityService.enseignant || securityService.expert">
+							<a class="dropdown-item" routerLink="/formation" routerLinkActive="active">Formation </a>
+            </li>
+            <li *ngIf="securityService.admin || securityService.enseignant">
+							<a class="dropdown-item" routerLink="/emplois" routerLinkActive="active">Emploi Du temps</a>
+						</li>
+				
+          </ul>
+        </li>
+    
+        <li   *ngIf="securityService.admin || securityService.enseignant|| securityService.expert " class="dropdown"><a><span>Enseignants</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li  *ngIf="securityService.admin || securityService.enseignant|| securityService.expert">
+							<a class="dropdown-item" routerLink="/enseignants" routerLinkActive="active">Enseignants</a>
+						</li>
+            <li *ngIf="securityService.admin|| securityService.enseignant">
+							<a class="dropdown-item" routerLink="/notes" routerLinkActive="active">Notes</a>
+						</li>
+            <li *ngIf="securityService.admin|| securityService.enseignant">
+							<a class="dropdown-item" routerLink="/absences" routerLinkActive="active">Absences</a>
+						</li>
+            <li *ngIf="securityService.admin|| securityService.enseignant">
+							<a class="dropdown-item" routerLink="/qcms" routerLinkActive="active">Qcms</a>
+						</li>
+            <li *ngIf="securityService.admin|| securityService.enseignant">
+							<a class="dropdown-item" routerLink="/examens" routerLinkActive="active">Examens</a>
+						</li>
+         </ul>
+        </li>
+     
+        
+        
+       
+      </ul>
+      
+      <i class="bi bi-list mobile-nav-toggle" *ngIf="securityService.admin"></i>
+    </nav>
+   
+       
+    <a routerLink="/about" routerLinkActive="active" class="get-started-btn">About</a>
+    <a routerLink="/course" routerLinkActive="active" class="get-started-btn">Course</a>
+
+
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      
+    <ul>
+      <li class="dropdown"><a style="margin-bottom: 0px;cursor: pointer;" ><span>{{securityService.profile?.username }} </span><i class="bi bi-chevron-down"></i></a>      
+      <ul> 
+        <li>
+          <a  class="dropdown-item">{{securityService.getUserRoles()}}</a>
+        </li>
+        <li>
+          <a  class="dropdown-item " style="cursor: pointer;" (click)="logOut()">Logout</a>
+        </li>
+      </ul>
+      </li>
+    </ul>
+    
+    </nav>
+  </div>
+
+
+</header>
+
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+     </div>
+  </div><!-- End Breadcrumbs -->
+
+     
+       
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts section-bg">
+    <div class="container">
+
+        <router-outlet></router-outlet>
+
+    
+
+    </div>
+  </section><!-- End Counts Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+ 
+
+</main><!-- End #main -->
+
+
+ <script>
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+
+ </script>

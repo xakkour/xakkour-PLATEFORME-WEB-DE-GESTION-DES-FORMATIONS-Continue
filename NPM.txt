@@ -1,0 +1,17 @@
+
+########################
+This Problem is due to Having an Angular Version but not all npm packages are in support to the current version and many other deprecated functionalities.
+
+npm install --force 
+
+It will download all the packages with their versions from package.json and make sures it will run the project when using
+
+npm run start
+
+To only download specified versions packages
+
+npm ci --force
+
+To fix the issue once you installed all the packaage.json if any problem arsies then use
+
+npm install --legacy-peer-deps
