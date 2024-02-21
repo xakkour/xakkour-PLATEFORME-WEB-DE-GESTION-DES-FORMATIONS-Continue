@@ -1,0 +1,34 @@
+<div class="card">
+  <mat-toolbar color="primary">
+    <h1>{{title}}</h1>
+  </mat-toolbar>
+  <hr>
+  <div class="card-body">
+          <form [formGroup]="this.crudApi.formData" (ngSubmit)="onSubmit()">
+            <input type="hidden"  formControlName="id" id="id">
+            <div class="form-group">
+              <label>Code </label>
+              <input type="text" class="form-control" formControlName="code" id="code">
+            </div>
+            <div class="form-group">
+              <label>Libelle</label>
+              <input type="text"
+              [(ngModel)]="libelle"
+              (ngModelChange)="onLibelleChange($event)"
+              (input)="limitLength($event)"
+              class="form-control" 
+              formControlName="libelle" 
+              id="libelle"
+                placeholder="Libelle Cycle">
+                <div class="error-message" 
+                *ngIf="submitted && showLibelleError" class="text-danger">
+                  libelle cannot be empty!</div>
+            </div>
+            <br>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary"><i class="icon-database"></i> Valider</button> &nbsp;
+              <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="icon-x-square"></i> Fermer</button>
+      </div>
+          </form>
+  </div>
+</div>
