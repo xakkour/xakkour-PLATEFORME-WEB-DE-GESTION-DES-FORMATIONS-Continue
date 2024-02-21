@@ -25,6 +25,6 @@ On the other hand, the second part, we will address the practical aspect, more p
 
 ## Screenshots
 
-![App Screenshot](screen 1.png)
-![App Screenshot](screen 3.png)
-![App Screenshot](screen 4.png)
+![App Screenshot]([screen 1.png](https://github.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/blob/main/screen%201.png)https://github.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/blob/main/screen%201.png)
+![App Screenshot]([https://github.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/blob/main/screen%203.png)](https://raw.githubusercontent.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/main/screen%203.png))
+![App Screenshot]([screen 4.png](https://github.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/blob/main/screen%202.png)https://github.com/xakkour/xakkour-PLATEFORME-WEB-DE-GESTION-DES-FORMATIONS-Continue/blob/main/screen%202.png)
